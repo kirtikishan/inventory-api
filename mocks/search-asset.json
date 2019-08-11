@@ -1,0 +1,8 @@
+{
+    "body": "{\"assetname\":\"NA\", \"shopcenterid\":\"NA\"}",
+    "requestContext": {
+      "identity": {
+        "cognitoIdentityId": "us-east-1:1206e486-919d-41d1-94ce-94ffe407acf5"
+      }
+    }
+  }

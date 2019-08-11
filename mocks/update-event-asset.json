@@ -1,0 +1,11 @@
+{
+    "body": "{\"assetwidth\":\"500\", \"assetheight\":\"550\", \"assetstatus\":\"inactive\",\"shopcenterid\":\"6fefddd0-b8d0-11e9-a85b-1d178f6fb7a2\"}",
+    "pathParameters": {
+      "id": "27f46030-b8e1-11e9-ad43-0df49bc12438"
+    },
+    "requestContext": {
+      "identity": {
+        "cognitoIdentityId": "USER-SUB-1234"
+      }
+    }
+  }

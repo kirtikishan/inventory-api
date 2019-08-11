@@ -1,0 +1,8 @@
+{
+    "body": "{\"shopname\":\"David Jones\",\"shopaddress\":\"Parramatta\", \"shoplocation\":\"Level5\"}",
+    "requestContext": {
+      "identity": {
+        "cognitoIdentityId": "USER-SUB-1234"
+      }
+    }
+  }
