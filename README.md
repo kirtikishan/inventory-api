@@ -10,16 +10,16 @@ Api Gateway: deployed in region us-east1: https://n7gqnawcrg.execute-api.us-east
 ENV: prod (Just used as a sample stage variable)
 EndPoints: /assets, /shop.
 
-  POST - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/shop
-  GET - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/shop
-  PUT - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/shop/{id}
-  DELETE - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/shop/{id}
-  POST - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/assets
-  GET - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/assets/{id}
-  GET - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/assets
-  PUT - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/assets/{id}
-  DELETE - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/assets/{id}
-  POST - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/assets/search
+  POST - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/shop \
+  GET - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/shop \
+  PUT - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/shop/{id} \
+  DELETE - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/shop/{id} \
+  POST - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/assets \
+  GET - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/assets/{id} \
+  GET - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/assets \
+  PUT - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/assets/{id} \
+  DELETE - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/assets/{id} \
+  POST - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/assets/search \
 
 Since it is a AWS Cloud based service you need an IAM account to test the services. In order to test the service you can use aws-api-gateway-cli-test package. The way to test your api using this package is :
 
