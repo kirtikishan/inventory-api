@@ -1,0 +1,112 @@
+service: inventory-api
+
+# Create an optimized package for our functions
+package:
+  individually: true
+
+plugins:
+  - serverless-bundle # Package our functions with Webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: prod
+  region: us-east-1
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:us-east-1:*:*"
+
+functions:
+  createShopping:
+    handler: createShopping.main
+    events:
+      - http:
+          path: shop
+          method: post
+          cors: true
+          authorizer: aws_iam
+  listShop:
+    handler: listShop.main
+    events:
+      - http:
+          path: shop
+          method: get
+          cors: true
+          authorizer: aws_iam
+  updateShop:
+    handler: updateShop.main
+    events:
+      - http:
+          path: shop/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam
+  deleteShop:
+    handler: deleteShop.main
+    events:
+      - http:
+          path: shop/{id}
+          method: delete
+          cors: true
+          authorizer: aws_iam
+  createAsset:
+    handler: createAsset.main
+    events:
+      - http:
+          path: assets
+          method: post
+          cors: true
+          authorizer: aws_iam
+  getAsset:
+    handler: getAsset.main
+    events:
+      - http:
+          path: assets/{id}
+          method: get
+          cors: true
+          authorizer: aws_iam
+  listAsset:
+    handler: listAsset.main
+    events:
+      - http:
+          path: assets
+          method: get
+          cors: true
+          authorizer: aws_iam
+  updateAsset:
+    handler: updateAsset.main
+    events:
+      - http:
+          path: assets/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam
+  deleteAsset:
+    handler: deleteAsset.main
+    events:
+      - http:
+          path: assets/{id}
+          method: delete
+          cors: true
+          authorizer: aws_iam
+  searchAsset:
+    handler: searchAsset.main
+    events:
+      - http:
+          path: assets/search
+          method: post
+          cors: true
+          authorizer: aws_iam
+resources:
+  # API Gateway Errors
+  - ${file(resources/api-gateway-errors.yml)}
