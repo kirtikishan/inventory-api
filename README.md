@@ -19,7 +19,7 @@ EndPoints: /assets, /shop.
   GET - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/assets \
   PUT - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/assets/{id} \
   DELETE - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/assets/{id} \
-  POST - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/assets/search \
+  POST - https://n7gqnawcrg.execute-api.us-east-1.amazonaws.com/prod/assets/search 
 
 Since it is a AWS Cloud based service you need an IAM account to test the services. In order to test the service you can use aws-api-gateway-cli-test package. The way to test your api using this package is :
 
@@ -42,15 +42,15 @@ npx aws-api-gateway-cli-test  \
   --body='{}'
 If you have setup locally to test your mock you can use below functions through CLI:
 
-serverless invoke local --function  listShop --path mocks/list-event.json
-serverless invoke local --function  createShopping --path mocks/create-event.json
-serverless invoke local --function  updateShop --path mocks/update-event.json
-serverless invoke local --function  createAsset --path mocks/create-event-asset.json
-serverless invoke local --function  listAsset --path mocks/get-event-asset.json
-serverless invoke local --function  updateAsset --path mocks/update-event-asset.json
-serverless invoke local --function  deleteShop --path mocks/delete-event.json
-serverless invoke local --function  deleteAsset --path mocks/delete-event-asset.json
-serverless invoke local --function  getAsset --path mocks/get-asset-id.json
-serverless invoke local --function  searchAsset --path mocks/search-asset-id.json
+serverless invoke local --function  listShop --path mocks/list-event.json \
+serverless invoke local --function  createShopping --path mocks/create-event.json \
+serverless invoke local --function  updateShop --path mocks/update-event.json \
+serverless invoke local --function  createAsset --path mocks/create-event-asset.json \
+serverless invoke local --function  listAsset --path mocks/get-event-asset.json \
+serverless invoke local --function  updateAsset --path mocks/update-event-asset.json \
+serverless invoke local --function  deleteShop --path mocks/delete-event.json \
+serverless invoke local --function  deleteAsset --path mocks/delete-event-asset.json \
+serverless invoke local --function  getAsset --path mocks/get-asset-id.json \
+serverless invoke local --function  searchAsset --path mocks/search-asset-id.json 
 
 
